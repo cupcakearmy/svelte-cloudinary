@@ -12,7 +12,9 @@ yarn add svelte-cloudinary
 ```svelte
 <script>
 
-  import { image } from 'svelte-cloudinary'
+  import { image, initialize } from 'svelte-cloudinary'
+  
+  initialize({ cloud_name: 'myCloudinaryCloud' })
 
   const src = 'my/cloudinary/asset'
 </script>
