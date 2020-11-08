@@ -38,12 +38,13 @@ function getSizeOfElementOrSelector(node: ElementOrString, elOrString: ElementOr
   }
 }
 
-type BindType = ElementOrString | true | { width?: ElementOrString; height?: ElementOrString }
+type BindType = ElementOrString | true
+type BindObject = BindType | { width?: BindType; height?: BindType }
 
 export type ImageParameters = {
   src: string
   options?: Transformation | Transformation.Options
-  bind?: BindType
+  bind?: BindObject
 }
 
 export function image(node: HTMLImageElement, parameters?: ImageParameters) {
@@ -59,16 +60,17 @@ export function image(node: HTMLImageElement, parameters?: ImageParameters) {
     if (bind === true) {
       bind = node
     }
+    if (!options.crop) options.crop = 'fill'
 
     if (bind instanceof Element) Object.assign(options, getSizeOfElement(bind))
     else if (typeof bind === 'string') {
       Object.assign(options, getSizeOfElementOrSelector(node, bind))
     } else if (typeof bind === 'object') {
       if (bind.width) {
-        options.width = getSizeOfElementOrSelector(node, bind.width).width
+        options.width = getSizeOfElementOrSelector(node, bind.width === true ? node : bind.width).width
       }
       if (bind.height) {
-        options.height = getSizeOfElementOrSelector(node, bind.height).height
+        options.height = getSizeOfElementOrSelector(node, bind.height === true ? node : bind.height).height
       }
     }
   }
