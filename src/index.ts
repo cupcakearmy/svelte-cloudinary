@@ -38,10 +38,12 @@ function getSizeOfElementOrSelector(node: ElementOrString, elOrString: ElementOr
   }
 }
 
+type BindType = ElementOrString | true | { width?: ElementOrString; height?: ElementOrString }
+
 export type ImageParameters = {
   src: string
   options?: Transformation | Transformation.Options
-  bind?: ElementOrString | true | { width?: ElementOrString; height?: ElementOrString }
+  bind?: BindType
 }
 
 export function image(node: HTMLImageElement, parameters?: ImageParameters) {
