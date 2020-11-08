@@ -1,0 +1,16 @@
+{
+  "name": "svelte-cloudinary",
+  "version": "0.1.1",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "cloudinary-core": "^2.11.3",
+    "lodash": "^4.17.20"
+  }
+}
