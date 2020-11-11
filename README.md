@@ -10,6 +10,7 @@ There is an official integration comming, but it's not ready and for not does no
 - Automatic **resizing** based on the DOM and applied CSS
 - Automatic **lazy loading**
 - Fully compatible with native cloudinary options
+- Sapper (SSR) compatible
 
 ## 🗂 [Docs](https://svelte-cloudinary.vercel.app/modules/_index_)
 
