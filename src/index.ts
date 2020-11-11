@@ -1,9 +1,9 @@
 import { Cloudinary, Configuration, Transformation } from 'cloudinary-core'
 
-type ElementOrString = Element | string
-type Size = { width: number; height: number }
-type BindType = ElementOrString | true
-type BindObject = BindType | { width?: BindType; height?: BindType }
+export type ElementOrString = Element | string
+export type Size = { width: number; height: number }
+export type BindType = ElementOrString | true
+export type BindObject = BindType | { width?: BindType; height?: BindType }
 
 export type InitParameters = { debug?: boolean }
 export type ImageParameters = {
@@ -21,9 +21,9 @@ function log(...msg: any[]) {
   if (DEBUG) console.debug(...msg)
 }
 
-export function initialize(options: Configuration.Options, { debug }: InitParameters = {}) {
-  DEBUG = debug || false
-  cl = Cloudinary.new(options)
+export function initialize(cloudinary: Configuration.Options, options: InitParameters = {}) {
+  DEBUG = options.debug || false
+  cl = Cloudinary.new(cloudinary)
 }
 
 const defaults: Transformation | Transformation.Options = {

@@ -9,9 +9,11 @@
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
-    "prepublishOnly": "rm -rf dist && yarn run build"
+    "prepublishOnly": "rm -rf dist && yarn run build",
+    "docs": "typedoc --excludeNotExported --theme minimal --out docs src"
   },
   "devDependencies": {
+    "typedoc": "^0.19.2",
     "typescript": "^4.0.5"
   },
   "dependencies": {
