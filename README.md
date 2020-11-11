@@ -11,6 +11,8 @@ There is an official integration comming, but it's not ready and for not does no
 - Automatic **lazy loading**
 - Fully compatible with native cloudinary options
 
+## 🗂 [Docs](https://svelte-cloudinary.vercel.app/modules/_index_)
+
 ## 🚀 Quickstart
 
 ```bash
@@ -43,8 +45,6 @@ yarn add svelte-cloudinary
 
 This will formulate the Cloudinary url and insert it into the `img.src` property.
 Also it will resize to the `img` object itself because we set `bind: true`.
-
-## 🗂 [Docs](https://svelte-cloudinary.vercel.app/modules/_index_)
 
 ## ⌨️ Examples
 
