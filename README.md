@@ -3,6 +3,14 @@
 This is a little library that aims at integrating and making it easier to use the svelte with [Cloudinary](https://cloudinary.com/).
 There is an official integration comming, but it's not ready and for not does not work great.
 
+## 🌈 Features
+
+- Fully typed and typescript compatible
+- [Tiny: `~30kb gzip`](https://bundlephobia.com/result?p=svelte-cloudinary) (Of which 99% is the cloudinary dep.)
+- Automatic **resizing** based on the DOM and applied CSS
+- Automatic **lazy loading**
+- Fully compatible with native cloudinary options
+
 ## 🚀 Quickstart
 
 ```bash
@@ -28,7 +36,7 @@ yarn add svelte-cloudinary
 </style>
 
 <img
-  use:image={{ src, bind: true, options: { crop: 'fill' } }}
+  use:image={{ src, bind: true, lazy: true }}
   class="home-img"
   alt="background" />
 ```
@@ -36,23 +44,9 @@ yarn add svelte-cloudinary
 This will formulate the Cloudinary url and insert it into the `img.src` property.
 Also it will resize to the `img` object itself because we set `bind: true`.
 
-## 🗂 Docs
+## 🗂 [Docs](https://svelte-cloudinary.vercel.app/modules/_index_)
 
-The `image` action takes 3 parameters.
-
-### `src`
-
-The `publicId` of your asset.
-
-### `bind`
-
-This is a utility for setting width and/or height automatically based on the size of a rendered element in the DOM.
-
-- `true`: Uses the size of the img node itself
-- `'.someClass'`: Searches for the element closest to the image that matches the css query and takes that as size
-- `{ height: document.querySelector('#some'), height: '#some' }`: Set height and/or width independently from another. Can be an element or css selector.
-
-###### Examples
+## ⌨️ Examples
 
 ```svelte
 <!-- Simple -->
