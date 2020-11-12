@@ -1,7 +1,7 @@
 # svelte-cloudinary
 
 This is a little library that aims at integrating and making it easier to use the svelte with [Cloudinary](https://cloudinary.com/).
-There is an official integration comming, but it's not ready and for not does not work great.
+There is an official integration coming, but it's not ready and for not does not work great.
 
 ## 🌈 Features
 
@@ -59,22 +59,22 @@ With `step` we approximate the size needed to a multiple of `step`.
 
 ###### Example
 
-Immagine the same `<img />` has the width of `420`,`470` and `1080` on an iPhone, Android and Laptop respectively.
+Imagine the same `<img />` has the width of `420`,`470` and `1080` on an iPhone, Android and Laptop respectively.
 
 With a `step` size of e.g. `100` (`<img use:image={{ ..., step: 100 }} />`) they will become `500`, `500`, and `1100`. This will limit the ammount of transformations needed.
 
 ### `bind`
 
-With bind we can dynamically set the width and/or height of the transformet image depending of the rendered size.
+With bind we can dynamically set the width and/or height of the transformed image depending of the rendered size.
 
 - `bind: this` The size of the `<img />` element
-- `bind: el` The computed size of another element in the dom (usefull for a carousell e.g.)
+- `bind: el` The computed size of another element in the dom (useful for a carousel e.g.)
 - `bind: { width: this }` Only bind the width, leaving the height free. Also works with height of course
 - `bind: { width: '.wrapper' }` Finds the closest element that matches the selector and uses it for width.
 
 ##### Note
 
-If you provide a `bind` options (`<img use:image={{..., bind: true }} />`) but no crop option, we will automcatically add `crop: 'fill'` otherwise the image will not be resized by cloudinary.
+If you provide a `bind` options (`<img use:image={{..., bind: true }} />`) but no crop option, we will automatically add `crop: 'fill'` otherwise the image will not be resized by cloudinary.
 
 ###### TLDR;
 ```svelte
