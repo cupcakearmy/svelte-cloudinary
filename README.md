@@ -53,7 +53,7 @@ Well components are great of course, but when we only need to set a `src` tags w
 
 What are benefits?
 
-- Native styling (Svelte for now does not allow easy styling of child components
+- Native styling (Svelte for now does not allow easy styling of child components) <br> With an action we can easily use local styling beacuse we still have access to the `<img />` element
 - Lightweight
 - Reusable and composable
 
