@@ -47,7 +47,21 @@ yarn add svelte-cloudinary
 This will formulate the Cloudinary url and insert it into the `img.src` property.
 Also it will resize to the `img` object itself because we set `bind: true`.
 
-## Key Concepts
+## 🤔 Why an [action](https://svelte.dev/docs#use_action) and not component?
+
+Well components are great of course, but when we only need to set a `src` tags we can leverage the upsides of a svelte [action](https://svelte.dev/docs#use_action)
+
+What are benefits?
+
+- Native styling (Svelte for now does not allow easy styling of child components
+- Lightweight
+- Reusable and composable
+
+Downsides:
+
+- The src will not be set serverside, so also not in the initial server response. Which I believe is not that bad though for images.
+
+## 🤓 Key Concepts
 
 ### `step`
 
