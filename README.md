@@ -1,7 +1,7 @@
 # svelte-cloudinary
 
 This is a little library that aims at integrating and making it easier to use the svelte with [Cloudinary](https://cloudinary.com/).
-There is an official integration coming, but it's not ready and for not does not work great.
+There is an official integration coming, but it's not ready and for not does not work great for now (SSR e.g.).
 
 ## 🌈 Features
 
