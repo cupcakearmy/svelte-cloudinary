@@ -69,7 +69,7 @@ The `step` property (defaults to `200`) helps reducing the amounts of transforma
 
 How? Basically whenever we calculate the dynamic size of the image rendered on the DOM we will get very specific numbers depending on the device.
 
-With `step` we approximate the size needed to a multiple of `step`.
+With `step` we approximate the size needed to the nearset bigger multiple of `step`.
 
 ###### Example
 
