@@ -1,6 +1,6 @@
 import { Cloudinary, Configuration, Transformation } from 'cloudinary-core'
 
-export type ElementOrString = Element | string
+export type ElementOrString = HTMLElement | string
 export type Size = { width: number; height: number }
 export type BindType = ElementOrString | true
 export type BindObject = BindType | { width?: BindType; height?: BindType }
@@ -34,13 +34,13 @@ const defaults: Transformation | Transformation.Options = {
 function calculateApproxRealSize(size: string, step: number): number {
   const withRatio = (parseInt(size) * window.devicePixelRatio) | 0
   const approx = withRatio - (withRatio % step) + step
-  log('Size', withRatio, approx, step)
+  log(`Size\t withRation=${withRatio} approx=${approx} step=${step}`)
   return approx
 }
 
-function getSizeOfElement(el: Element, step: number): Size {
+function getSizeOfElement(el: HTMLElement, step: number): Size {
   const styles = window.getComputedStyle(el)
-  log('GetSizeOfElement', el, styles)
+  log('GetSizeOfElement', el, `width=${styles.width} height=${styles.height}`)
   return {
     width: calculateApproxRealSize(styles.width, step),
     height: calculateApproxRealSize(styles.height, step),
@@ -51,7 +51,7 @@ function getSizeOfElementOrSelector(node: ElementOrString, elOrString: ElementOr
   if (typeof elOrString === 'string') {
     const search = typeof node === 'string' ? window.document.querySelector(node) : node
     if (!search) throw new Error('Could not find element: ' + node)
-    const closest = search.closest(elOrString)
+    const closest = search.closest<HTMLElement>(elOrString)
     if (closest) return getSizeOfElement(closest, step)
     else throw new Error('Could not find element: ' + elOrString)
   } else {
