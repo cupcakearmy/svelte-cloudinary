@@ -47,6 +47,8 @@ yarn add svelte-cloudinary
 This will formulate the Cloudinary url and insert it into the `img.src` property.
 Also it will resize to the `img` object itself because we set `bind: true`.
 
+> ⚠️ In firefox if you want to use the `bind` option to automatically compute sizes you need to set `img { display: inline-block or block; }` otherwise there can be problems with `getComputedStyle`.
+
 ## ☁️ Cloudinary Setup
 
 If you want the use super handfull auto upload function (which I think will apply to everyone) you have to set configure a few settings first.
