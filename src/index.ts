@@ -28,7 +28,7 @@ export function initialize(cloudinary: Configuration.Options, options: InitParam
 
 const defaults: Transformation | Transformation.Options = {
   fetchFormat: 'auto',
-  quality: 'auto:good',
+  quality: 'auto',
 }
 
 function calculateApproxRealSize(size: string, step: number): number {
@@ -64,8 +64,9 @@ export function image(node: HTMLImageElement, parameters: ImageParameters) {
 
   let { src, options, bind, lazy, step } = parameters
   log('Image Declared', parameters)
-  options = options || {}
+  options = options ?? {}
   step = step ?? 200
+  lazy = lazy ?? true
 
   if (!cl) throw new Error('Cloudinary not initialized')
   if (!src) throw new Error('Src must be set in use:image')
@@ -91,6 +92,7 @@ export function image(node: HTMLImageElement, parameters: ImageParameters) {
 
   const all: Transformation | Transformation.Options = { ...defaults, ...options }
   const attrs: any = cl.imageTag(parameters.src, all).attributes()
+  log('Attributes', attrs)
   const replace = () => (node.src = attrs.src)
 
   if (lazy && typeof IntersectionObserver !== 'undefined') {
