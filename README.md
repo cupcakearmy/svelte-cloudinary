@@ -100,9 +100,17 @@ If you are using sapper you can initialize it once in your root `_layout.svelte`
 
 ## 🤓 Key Concepts
 
+### `lazy`
+
+###### default `true`
+
+If images should use the [`Intersection Observer API`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to lazy load. 
+
 ### `step`
 
-The `step` property (defaults to `200`) helps reducing the amounts of transformations cloudinary need to perform and less credits being billed to you.
+###### default `200`
+
+The `step` property helps reducing the amounts of transformations cloudinary need to perform and less credits being billed to you.
 
 How? Basically whenever we calculate the dynamic size of the image rendered on the DOM we will get very specific numbers depending on the device.
 
