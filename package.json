@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
-    "prepublishOnly": "rm -rf dist && yarn run build",
+    "prepublishOnly": "rm -rf dist && npm run build",
     "docs": "typedoc --excludeNotExported --theme minimal --out docs src"
   },
   "devDependencies": {
