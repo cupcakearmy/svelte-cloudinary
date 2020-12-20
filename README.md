@@ -47,6 +47,29 @@ yarn add svelte-cloudinary
 This will formulate the Cloudinary url and insert it into the `img.src` property.
 Also it will resize to the `img` object itself because we set `bind: true`.
 
+## ☁️ Cloudinary Setup
+
+If you want the use super handfull auto upload function (which I think will apply to everyone) you have to set configure a few settings first.
+
+* Settings -> Security -> Allowed fetch domains: Add your domain(s) from which the images are fetched from.
+* Settings -> Upload -> Auto upload mapping: Set the mapping for your domain and/or path
+
+###### Example
+
+Immagine you want to serve an image with the url of: `https://api.example.org/images/elephants.png`
+
+1. Settings -> Security -> Allowed fetch domains: Add `api.example.org` to the list.
+2. Settings -> Upload -> Auto upload mapping:<br>Folder: `myimages`<br>URL prefix: `https://api.example.org/images/`
+
+Now you can use the auto upload funtion like this:
+
+```svelte
+<img
+  use:image={{ src: 'myimages/elephants.png' }}
+  class="home-img"
+  alt="background" />
+```
+
 ## 🤔 Why an [action](https://svelte.dev/docs#use_action) and not component?
 
 Well components are great of course, but when we only need to set a `src` tags we can leverage the upsides of a svelte [action](https://svelte.dev/docs#use_action)
@@ -60,6 +83,20 @@ What are benefits?
 Downsides:
 
 - The src will not be set serverside, so also not in the initial server response. Which I believe is not that bad though for images.
+
+## 👷 Sapper
+
+If you are using sapper you can initialize it once in your root `_layout.svelte`.
+
+```svelte
+<script lang="ts">
+	import { initialize } from 'svelte-cloudinary'
+
+	initialize({ cloud_name: 'mycloud' })
+  
+  // ...
+</script>
+```
 
 ## 🤓 Key Concepts
 
