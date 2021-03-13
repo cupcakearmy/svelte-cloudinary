@@ -14,6 +14,8 @@ There is an [official integration coming](https://github.com/cloudinary/cloudina
 
 ## 🗂 [Docs](https://svelte-cloudinary.vercel.app/modules/_index_)
 
+## ❓ Questions & More -> [Discussions](https://github.com/cupcakearmy/svelte-cloudinary/discussions)
+
 ## 🚀 Quickstart
 
 ```bash
