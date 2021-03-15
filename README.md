@@ -1,5 +1,12 @@
 # svelte-cloudinary
 
+![dependencies](https://badgen.net/david/dep/cupcakearmy/svelte-cloudinary)
+![downloads badge](https://badgen.net/npm/dt/svelte-cloudinary)
+![types badge](https://badgen.net/npm/types/svelte-cloudinary)
+![version badge](https://badgen.net/npm/v/svelte-cloudinary)
+![minzip size badge](https://badgen.net/bundlephobia/minzip/svelte-cloudinary)
+
+
 This is a little library that aims at integrating and making it easier to use the svelte with [Cloudinary](https://cloudinary.com/).
 There is an [official integration coming](https://github.com/cloudinary/cloudinary-svelte), but it's not ready and for not does not work great for now (SSR e.g.).
 
