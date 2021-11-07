@@ -65,6 +65,7 @@ export function image(node: HTMLImageElement, parameters: ImageParameters) {
   let { src, options, bind, lazy, step } = parameters
   log('Image Declared', parameters)
   options = options ?? {}
+  options.crop = options.crop ?? 'fill'
   step = step ?? 200
   lazy = lazy ?? true
 
