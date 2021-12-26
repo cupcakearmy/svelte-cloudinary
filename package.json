@@ -1,6 +1,6 @@
 {
   "name": "svelte-cloudinary",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -10,14 +10,13 @@
     "dev": "tsc -w",
     "build": "tsc",
     "prepublishOnly": "rm -rf dist && yarn run build",
-    "docs": "typedoc --excludeNotExported --theme minimal --out docs src"
+    "docs": "typedoc --out docs src"
   },
   "devDependencies": {
-    "typedoc": "^0.19.2",
-    "typescript": "^4.4.4"
+    "typedoc": "^0.22.10",
+    "typescript": "^4.5.4"
   },
   "dependencies": {
-    "cloudinary-core": "^2.12.0",
-    "lodash": "^4.17.21"
+    "cloudinary-core": "^2.12.0"
   }
 }
