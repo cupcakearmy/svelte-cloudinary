@@ -6,7 +6,6 @@
 ![version badge](https://badgen.net/npm/v/svelte-cloudinary)
 ![minzip size badge](https://badgen.net/bundlephobia/minzip/svelte-cloudinary)
 
-
 This is a little library that aims at integrating and making it easier to use the svelte with [Cloudinary](https://cloudinary.com/).
 There is an [official integration coming](https://github.com/cloudinary/cloudinary-svelte), but it's not ready and for not does not work great for now (SSR e.g.).
 
@@ -26,9 +25,6 @@ There is an [official integration coming](https://github.com/cloudinary/cloudina
 ## 🚀 Quickstart
 
 ```bash
-yarn add svelte-cloudinary
-```
-```bash
 npm install svelte-cloudinary
 ```
 
@@ -36,7 +32,7 @@ npm install svelte-cloudinary
 <script>
 
   import { image, initialize } from 'svelte-cloudinary'
-  
+
   initialize({ cloud_name: 'myCloudinaryCloud' })
 
   const src = 'my/cloudinary/asset'
@@ -65,8 +61,8 @@ Also it will resize to the `img` object itself because we set `bind: true`.
 
 If you want the use super handfull auto upload function (which I think will apply to everyone) you have to set configure a few settings first.
 
-* Settings -> Security -> Allowed fetch domains: Add your domain(s) from which the images are fetched from.
-* Settings -> Upload -> Auto upload mapping: Set the mapping for your domain and/or path
+- Settings -> Security -> Allowed fetch domains: Add your domain(s) from which the images are fetched from.
+- Settings -> Upload -> Auto upload mapping: Set the mapping for your domain and/or path
 
 ###### Example
 
@@ -107,7 +103,7 @@ If you are using sapper you can initialize it once in your root `_layout.svelte`
 	import { initialize } from 'svelte-cloudinary'
 
 	initialize({ cloud_name: 'mycloud' })
-  
+
   // ...
 </script>
 ```
@@ -118,7 +114,7 @@ If you are using sapper you can initialize it once in your root `_layout.svelte`
 
 ###### default `true`
 
-If images should use the [`Intersection Observer API`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to lazy load. 
+If images should use the [`Intersection Observer API`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to lazy load.
 
 ### `step`
 
@@ -150,12 +146,12 @@ With bind we can dynamically set the width and/or height of the transformed imag
 If you provide a `bind` options (`<img use:image={{..., bind: true }} />`) but no crop option, we will automatically add `crop: 'fill'` otherwise the image will not be resized by cloudinary.
 
 ###### TLDR;
+
 ```svelte
 <img use:image={{ src, bind: true }} />
 <!-- Is internally equivalent to the following -->
 <img use:image={{ src, bind: true, options: { crop: 'fill' } }} />
 ```
-
 
 ## ⌨️ Examples
 
@@ -166,7 +162,6 @@ If you provide a `bind` options (`<img use:image={{..., bind: true }} />`) but n
   use:image={{ src, options: { width: 200, height: 100, crop: 'fill' } }}
 />
 ```
-
 
 ### `bind`
 
