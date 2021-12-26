@@ -28,6 +28,9 @@ There is an [official integration coming](https://github.com/cloudinary/cloudina
 ```bash
 yarn add svelte-cloudinary
 ```
+```bash
+npm install svelte-cloudinary
+```
 
 ```svelte
 <script>
