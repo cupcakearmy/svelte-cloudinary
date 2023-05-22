@@ -1,3 +1,9 @@
+> DEPRECATED
+>
+> See https://github.com/cloudinary-community/svelte-cloudinary
+>
+> The npm package will be transfered to them.
+
 # svelte-cloudinary
 
 ![dependencies](https://badgen.net/david/dep/cupcakearmy/svelte-cloudinary)
